@@ -1,4 +1,4 @@
-var Places = null;
+global Places = null;
 // Changes XML to JSON
 function xmlToJson(xml) {
 	
@@ -47,7 +47,7 @@ function GetDestinations(City){
 	JsonFile.send();
 	JsonFile.onreadystatechange = function() {
 		if (JsonFile.readyState== 4 && JsonFile.status == 200) {
-			console.log(xmlToJson(parser.parseFromString(JsonFile.responseText,"text/xml")));
+			Places=xmlToJson(parser.parseFromString(JsonFile.responseText,"text/xml"));
 		}
 	}
 }
