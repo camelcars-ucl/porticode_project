@@ -58,8 +58,14 @@
 		GetDestinations("London");
 
 		function PlacesFound(Places){
-			console.log(Places);
-			console.log("Yes its really me");
+			var waypoints = document.getElementById('waypoints');
+			var Responses = Places["PlaceSearchResponse"]["result"];
+			for (var i =0; i < Responses.length; i ++){
+				var option = document.createElement("option");
+				option.text = Responses[i]["name"]["#text"];
+				option.value =  Responses[i]["formatted_address"]["#text"];
+				waypoints.appendChild(option);
+			}
 		}
 	</script>
 
@@ -111,8 +117,8 @@
         }
 
         directionsService.route({
-          origin: document.getElementById('StartP').value,//"London EC3N 4AB, United Kingdom",//document.getElementById('start').value,
-          destination: document.getElementById('EndP').value,//"County Hall, Westminster Bridge Rd, London SE1 7PB, United Kingdom",//document.getElementById('end').value,
+          origin: document.getElementById('StartP').value,
+          destination: document.getElementById('EndP').value,
           waypoints: waypts,
           optimizeWaypoints: true,
           travelMode: 'TRANSIT'
