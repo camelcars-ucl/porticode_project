@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 echo "MEH";
 
-$curl = curl_init("https://maps.googleapis.com/maps/api/place/textsearch/xml?query=tourist+attractions+in+".$_GET['city']."&key=AIzaSyB39gn3Le7ynVvxC-7GVvrtF3lIur60vsk");
+$curl = curl_init("https://maps.googleapis.com/maps/api/place/textsearch/json?query=tourist+attractions+in+".$_GET['city']."&key=AIzaSyB39gn3Le7ynVvxC-7GVvrtF3lIur60vsk");
 
-echo json_encode(curl_exec($curl));
+echo curl_exec($curl);
 ?>
