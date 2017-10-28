@@ -15,7 +15,7 @@ function GetData(){
 	curl_setopt_array($curl, $options);
 	$xml=curl_exec($curl);
 	echo $xml;
-	file_put_contents($_GET['city'].".xml", json_encode($xml));
+	file_put_contents($_GET['city'].".xml", $xml);
 }
 
 if (file_exists($_GET['city'].".xml")){
