@@ -1,10 +1,5 @@
 <?php
-if (file_exists($_GET['city'].".xml")){
-	echo json_decode(file_get_contents($_GET['city'].".xml"));
-	unlink($_GET['city'].".xml");
-	echo "MEH";
-}else{
-	echo "HERE";
+function GetData(){
 	$options = array(
         CURLOPT_RETURNTRANSFER => true,   // return web page
         CURLOPT_HEADER         => false,  // don't return headers
@@ -19,8 +14,19 @@ if (file_exists($_GET['city'].".xml")){
 	$curl = curl_init("https://maps.googleapis.com/maps/api/place/textsearch/xml?query=tourist+attractions+in+".$_GET['city']."&key=AIzaSyB39gn3Le7ynVvxC-7GVvrtF3lIur60vsk");
 	curl_setopt_array($curl, $options);
 	$xml=curl_exec($curl);
-	echo gettype($xml);
-	echo json_encode($xml);
+	echo $xml;
 	file_put_contents($_GET['city'].".xml", json_encode($xml));
+}
+
+
+if (file_exists($_GET['city'].".xml")){
+	if ((time() - filemtime()) > 86400){
+		unlink($_GET['city'].".xml");
+		GetData();
+	}else{
+		echo file_get_contents($_GET['city'].".xml");
+	}
+}else{
+	GetData();
 }
 ?>
