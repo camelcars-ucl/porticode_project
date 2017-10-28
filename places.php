@@ -18,7 +18,6 @@ function GetData(){
 	file_put_contents($_GET['city'].".xml", json_encode($xml));
 }
 
-unlink($_GET['city'].".xml");
 if (file_exists($_GET['city'].".xml")){
 	if ((time() - filemtime($_GET['city'])) > 86400){
 		unlink($_GET['city'].".xml");
