@@ -1,6 +1,7 @@
 <?php
 if (file_exists($_GET['city'].".xml")){
 	echo json_decode(file_get_contents($_GET['city'].".xml"));
+	unlink($_GET['city'].".xml");
 	echo "MEH";
 }else{
 	echo "HERE";
