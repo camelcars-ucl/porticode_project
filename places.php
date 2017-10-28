@@ -20,7 +20,7 @@ function GetData(){
 
 
 if (file_exists($_GET['city'].".xml")){
-	if ((time() - filemtime()) > 86400){
+	if ((time() - filemtime($_GET['city'])) > 86400){
 		unlink($_GET['city'].".xml");
 		GetData();
 	}else{
