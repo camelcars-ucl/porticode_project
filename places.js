@@ -1,3 +1,4 @@
+var Places = null;
 // Changes XML to JSON
 function xmlToJson(xml) {
 	
