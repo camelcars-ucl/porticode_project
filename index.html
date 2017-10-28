@@ -7,9 +7,14 @@
 	<h1>H</h1>
 	<script>
 		GetDestinations("London");
-		//while(Places == null){}//Wait for Data
-		alert("Data Is Here");
-		console.log(Places);
+		Meh();
+		function Meh(){}
+			if (Places == null){
+				console.log(Places);
+				console.log("qq");
+				setTimeout(Meh, 1000);
+			}
+		}
 	</script>
 </body>
 </html>
