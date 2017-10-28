@@ -59,6 +59,7 @@
 
 		function PlacesFound(Places){
 			var waypoints = document.getElementById('waypoints');
+			waypoints.options.length = 0;//Reset selection
 			var Responses = Places["PlaceSearchResponse"]["result"];
 			for (var i =0; i < Responses.length; i ++){
 				var option = document.createElement("option");
