@@ -159,7 +159,8 @@
 		  travelMode: 'DRIVING'
 		}, function(response, status) {
 		  if (status === 'OK') {
-		  	console.log(response);
+		  	var routes = response["routes"][0]["legs"];
+		  	console.log(routes);
 		  	/*
 			directionsDisplay.setDirections(response);
 			var route = response.routes[0];
