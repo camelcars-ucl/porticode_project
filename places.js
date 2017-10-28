@@ -48,7 +48,7 @@ function GetDestinations(City){
 	JsonFile.onreadystatechange = function() {
 		if (JsonFile.readyState== 4 && JsonFile.status == 200) {
 			Places=xmlToJson(parser.parseFromString(JsonFile.responseText,"text/xml"));
-			PlacesFound = true;
+			PlacesFound(Places);
 		}
 	}
 }
