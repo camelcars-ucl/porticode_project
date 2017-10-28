@@ -1,4 +1,4 @@
-global Places = null;
+var Places = null;
 // Changes XML to JSON
 function xmlToJson(xml) {
 	
@@ -48,6 +48,7 @@ function GetDestinations(City){
 	JsonFile.onreadystatechange = function() {
 		if (JsonFile.readyState== 4 && JsonFile.status == 200) {
 			Places=xmlToJson(parser.parseFromString(JsonFile.responseText,"text/xml"));
+			PlacesFound = true;
 		}
 	}
 }

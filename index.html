@@ -6,18 +6,11 @@
 <body>
 	<h1>H</h1>
 	<script>
+		var PlacesFound = false;
 		GetDestinations("London");
-		Meh();
-		function Meh(){
-			if (Places == null){
-				console.log(Places);
-				console.log("qq");
-				setTimeout(Meh, 1000);
-			}else{
-				console.log(Places);
-				console.log("YAY");
-			}
-		}
+		while (!PlacesFound){}//Wait
+		alert("here");
+		console.log(Places);
 	</script>
 </body>
 </html>
