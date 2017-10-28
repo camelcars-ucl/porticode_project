@@ -55,6 +55,7 @@
 <body>
 	<h1>Testt</h1>
 	<script>
+		var FirstRun = true;
 		GetDestinations("London");
 
 		function PlacesFound(Places){
@@ -66,6 +67,7 @@
 			}
 			//Reset selection
 			var Responses = Places["PlaceSearchResponse"]["result"];
+			console.log("")
 			for (var i =0; i < Responses.length; i ++){
 				var option = document.createElement("option");
 				option.text = Responses[i]["name"]["#text"];
@@ -133,7 +135,7 @@
 			directionsDisplay.setDirections(response);
 			var route = response.routes[0];
 			var summaryPanel = document.getElementById('directions-panel');
-			summaryPanel.innerHTML = '';
+			//summaryPanel.innerHTML = '';
 			// For each route, display summary information.
 			for (var i = 0; i < route.legs.length; i++) {
 			  var routeSegment = i + 1;
