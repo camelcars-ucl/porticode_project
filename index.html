@@ -132,10 +132,12 @@
 		  travelMode: 'TRANSIT'
 		}, function(response, status) {
 		  if (status === 'OK') {
-			directionsDisplay.setDirections(response);
+		  	console.log(directionsDisplay.getDirections());
+		  	console.log(response);
+			directionsDisplay.setDirections(directionsDisplay.getDirections()+response);
 			var route = response.routes[0];
 			var summaryPanel = document.getElementById('directions-panel');
-			//summaryPanel.innerHTML = '';
+			summaryPanel.innerHTML = '';
 			// For each route, display summary information.
 			for (var i = 0; i < route.legs.length; i++) {
 			  var routeSegment = i + 1;
