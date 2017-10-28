@@ -68,13 +68,7 @@
 	<div id="map"></div>
     <div id="right-panel">
     <div>
-    <b>Start:</b>
-    <!--<select id="start">
-      <option value="Halifax, NS">Halifax, NS</option>
-    </select>-->
-    <form>
-    <input type="text" name="firstname">
-	</form>
+    <b>Start:</b> <input type="text" id="StartP" value="London EC3N 4AB, United Kingdom">
     <br>
     <b>Via:</b> <br>
     <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
@@ -82,10 +76,7 @@
       <option value="montreal, quebec">Montreal, QBC</option>
     </select>
     <br>
-    <b>End:</b>
-    <select id="end">
-      <option value="Vancouver, BC">Vancouver, BC</option>
-    </select>
+    <b>End:</b> <input type="text" id="EndP" value="SE1 7PB">
     <br>
       <input type="submit" id="submit">
     </div>
@@ -119,8 +110,8 @@
         }
 
         directionsService.route({
-          origin: "London EC3N 4AB, United Kingdom",//document.getElementById('start').value,
-          destination: "County Hall, Westminster Bridge Rd, London SE1 7PB, United Kingdom",//document.getElementById('end').value,
+          origin: document.getElementById('StartP').value,//"London EC3N 4AB, United Kingdom",//document.getElementById('start').value,
+          destination: document.getElementById('EndP').value,//"County Hall, Westminster Bridge Rd, London SE1 7PB, United Kingdom",//document.getElementById('end').value,
           waypoints: waypts,
           optimizeWaypoints: true,
           travelMode: 'TRANSIT'
