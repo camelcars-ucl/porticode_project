@@ -11,7 +11,7 @@ function GetData(){
         CURLOPT_CONNECTTIMEOUT => 120,    // time-out on connect
         CURLOPT_TIMEOUT        => 120,    // time-out on response
     ); 
-	$curl = curl_init("https://maps.googleapis.com/maps/api/place/textsearch/xml?query=tourist+attractions+in+".$_GET['city']."&key=AIzaSyB39gn3Le7ynVvxC-7GVvrtF3lIur60vsk");
+	$curl = curl_init("https://maps.googleapis.com/maps/api/place/textsearch/xml?query=tourist+attractions+in+".$_GET['city']."&key=AIzaSyCt5eOwxpf76CDhdCoBUQ3ICzi-QwB4-eo");
 	curl_setopt_array($curl, $options);
 	$xml=curl_exec($curl);
 	echo $xml;
