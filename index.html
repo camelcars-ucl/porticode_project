@@ -60,9 +60,9 @@
 		function PlacesFound(Places){
 			var waypoints = document.getElementById('waypoints');
 			//Reset selection
-			while (list.options.length) {
+			while (waypoints.options.length) {
 				// continue to remove the first option until no options remain.
-				list.remove(0);
+				waypoints.remove(0);
 			}
 			//Reset selection
 			var Responses = Places["PlaceSearchResponse"]["result"];
