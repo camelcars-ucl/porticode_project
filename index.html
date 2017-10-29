@@ -15,7 +15,7 @@
 
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 	<meta charset="utf-8">
-	<title>TAP</title>
+	<title>Route Planner For Sightseeing In Cities</title>
 	<style>
 	  #right-panel {
 		font-family: 'Roboto','sans-serif';
@@ -55,7 +55,6 @@
 		height: 400px;
 		float: bottom;
 		text-align: left;
-		padding-top: 0;
 		border:1px solid black;
 	  }
 	  #directions-panel {
@@ -189,21 +188,6 @@
 		  if (status === 'OK') {
 		  	var routes = response["routes"][0]["legs"];
 		  	drawMap(map, directionsDisplay,directionsService,routes);
-		  	/*
-			directionsDisplay.setDirections(response);
-			var route = response.routes[0];
-			var summaryPanel = document.getElementById('directions-panel');
-			summaryPanel.innerHTML = '';
-			// For each route, display summary information.
-			for (var i = 0; i < route.legs.length; i++) {
-			  var routeSegment = i + 1;
-			  summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-				  '</b><br>';
-			  summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-			  summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-			  summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
-			}
-			*/
 		  } else {
 			window.alert('Directions request failed due to ' + status);
 		  }
