@@ -80,6 +80,7 @@
 
 	<div id="map"></div>
 	<div id="right-panel">
+
 	<div>
 	<b>Start:</b> <input type="text" id="StartP" value="London EC3N 4AB, United Kingdom">
 	<br>
@@ -140,7 +141,7 @@
 	  function calculateAndDisplayRoute(directionsService, directionsDisplay,map) {
 	  	//Clear previous paths
 	  	if (oldDirectionsRenderers.length != 0){
-	  		for (int i=0;i<oldDirectionsRenderers.length;i++){
+	  		for (var i=0;i<oldDirectionsRenderers.length;i++){
 	  			oldDirectionsRenderers[i].setMap(null);
 	  		}
 	  		oldDirectionsRenderers = [];
