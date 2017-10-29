@@ -108,7 +108,7 @@
 		directionsDisplay.setMap(map);
 
 		document.getElementById('submit').addEventListener('click', function() {
-		  calculateAndDisplayRoute(directionsService, directionsDisplay);
+		  calculateAndDisplayRoute(directionsService, directionsDisplay,map);
 		});
 		/*
 		document.getElementById('submit').addEventListener('click', function() {
@@ -117,7 +117,7 @@
 
 	  }
 
-  	function drawMap(map,directionsDisplay,directionsService) {
+  	function drawMap(map,directionsDisplay,directionsService,routes) {
 	    var directionDisplay;
 
 	    function renderDirections(result) { 
@@ -135,11 +135,14 @@
 	        renderDirections(result); 
 	      }); 
 	    } 
-	    requestDirections('London EC3N 4AB, United Kingdom', 'UCL'); 
-	    requestDirections('UCL', 'SE1 7PB');  
+	    for (var i =0;i<routes.length;i++){
+	    	requestDirections(routes[i]["start_address"],routes[i]["end_address"]);
+	    }
+	    /*requestDirections('London EC3N 4AB, United Kingdom', 'UCL'); 
+	    requestDirections('UCL', 'SE1 7PB');  */
   	}
 
-	  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+	  function calculateAndDisplayRoute(directionsService, directionsDisplay,map) {
 		var waypts = [];
 		var checkboxArray = document.getElementById('waypoints');
 		for (var i = 0; i < checkboxArray.length; i++) {
@@ -160,7 +163,7 @@
 		}, function(response, status) {
 		  if (status === 'OK') {
 		  	var routes = response["routes"][0]["legs"];
-		  	console.log(routes);
+		  	drawMap(map, directionsDisplay,directionsService,routes);
 		  	/*
 			directionsDisplay.setDirections(response);
 			var route = response.routes[0];
