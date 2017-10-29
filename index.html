@@ -56,6 +56,7 @@
 		float: bottom;
 		text-align: left;
 		padding-top: 0;
+		border:1px solid black;
 	  }
 	  #directions-panel {
 		margin-top: 10px;
@@ -84,7 +85,7 @@
 	<b>City: </b><input type="text" id="CityName" value="London" class="inputLen">
 	<input type="submit" id="Go" value="Search" class="btn btn-secondary" style="margin-left: 10px;" onclick="GetDestinations(document.getElementById('CityName').value)">
 	<br>
-	Via:
+	<b>Via:</b>
 	</b> <br>
 	<i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
 	<select multiple id="waypoints">
