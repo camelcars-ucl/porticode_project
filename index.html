@@ -54,7 +54,27 @@
 	</style>
 </head>
 <body>
-	<h1>Testt</h1>
+	<h1>Route Planner For Sightseeing In Cities</h1>
+	<div id="map">
+	<br>
+	<div id="right-panel">
+
+	<div>
+	<b>Start:</b> <input type="text" id="StartP" value="London EC3N 4AB, United Kingdom">
+	<br>
+	<br>
+	<b>Via:<input type="text" id="CityName" value="London">
+	<input type="submit" id="Go" value="Go" onclick="GetDestinations(document.getElementById('CityName').value)"></b> <br>
+	<i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+	<select multiple id="waypoints">
+	</select>
+	<br>
+	<b>End:</b> <input type="text" id="EndP" value="SE1 7PB">
+	<br>
+	  <input type="submit" id="submit">
+	</div>
+	<div id="directions-panel"></div>
+	</div>
 	<script>
 		var FirstRun = true;
 		GetDestinations("London");
@@ -76,28 +96,6 @@
 			}
 		}
 	</script>
-
-
-	<div id="map">
-	<br>
-	<div id="right-panel">
-
-	<div>
-	<b>Start:</b> <input type="text" id="StartP" value="London EC3N 4AB, United Kingdom">
-	<br>
-	<br>
-	<b>Via:<input type="text" id="CityName" value="London">
-	<input type="submit" id="Go" value="Go" onclick="GetDestinations(document.getElementById('CityName').value)"></b> <br>
-	<i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
-	<select multiple id="waypoints">
-	</select>
-	<br>
-	<b>End:</b> <input type="text" id="EndP" value="SE1 7PB">
-	<br>
-	  <input type="submit" id="submit">
-	</div>
-	<div id="directions-panel"></div>
-	</div>
 	<script>
 	  var oldDirectionsRenderers = [];
 	  function initMap() {
