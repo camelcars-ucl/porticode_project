@@ -98,7 +98,7 @@
 	<div id="directions-panel"></div>
 	</div>
 	<script>
-	  var oldDirectionsRenderer = null;
+	  var oldDirectionsRenderers = [];
 	  function initMap() {
 		var directionsService = new google.maps.DirectionsService;
 		var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -119,12 +119,9 @@
 
 	    function renderDirections(result) { 
 	        var directionsRenderer = new google.maps.DirectionsRenderer(); 
-	        /*if (oldDirectionsRenderer != null){
-	        	oldDirectionsRenderer.setMap(null);
-	        }*/
 	        directionsRenderer.setMap(map); 
 	        directionsRenderer.setDirections(result);
-	        oldDirectionsRenderer =  directionsRenderer;
+	        oldDirectionsRenderers.push(directionsRenderer);
 	      }     
 
 	    function requestDirections(start, end) { 
@@ -137,12 +134,19 @@
 	      }); 
 	    } 
 	    for (var i =0;i<routes.length;i++){
-	    	console.log(routes);
 	    	requestDirections(routes[i]["start_address"],routes[i]["end_address"]);
 	    }
   	}
 
 	  function calculateAndDisplayRoute(directionsService, directionsDisplay,map) {
+	  	//Clear previous paths
+	  	if (oldDirectionsRenderers != []]){
+	  		for (int i=0;i<oldDirectionsRenderers.length;i++){
+	  			oldDirectionsRenderers[i].setMap(null);
+	  		}
+	  		oldDirectionsRenderers = [];
+	  	}
+	  	//Clear previous paths
 		var waypts = [];
 		var checkboxArray = document.getElementById('waypoints');
 		for (var i = 0; i < checkboxArray.length; i++) {
