@@ -35,7 +35,7 @@
 		height: 100%;
 	  }
 	  #right-panel {
-		padding-top: 40px;
+		padding-top: 10vh;
     	left:50%;
 		margin: 0 auto;
 		border-width: 2px;
@@ -172,6 +172,21 @@
 		  if (status === 'OK') {
 		  	var routes = response["routes"][0]["legs"];
 		  	drawMap(map, directionsDisplay,directionsService,routes);
+		  	/*
+			directionsDisplay.setDirections(response);
+			var route = response.routes[0];
+			var summaryPanel = document.getElementById('directions-panel');
+			summaryPanel.innerHTML = '';
+			// For each route, display summary information.
+			for (var i = 0; i < route.legs.length; i++) {
+			  var routeSegment = i + 1;
+			  summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+				  '</b><br>';
+			  summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+			  summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+			  summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+			}
+			*/
 		  } else {
 			window.alert('Directions request failed due to ' + status);
 		  }
