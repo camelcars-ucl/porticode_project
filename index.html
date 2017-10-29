@@ -36,7 +36,6 @@
 	  }
 	  #right-panel {
 		/*margin: 20px;*/
-		position:absolute;
     	left:50%;
 		margin: 0 auto;
 		border-width: 2px;
@@ -53,6 +52,9 @@
 		overflow: scroll;
 		height: 174px;
 	  }
+	  .inputLen{
+	  	width:50px;
+	  }
 	</style>
 </head>
 <body>
@@ -60,12 +62,12 @@
 	<div id="map"></div>
 	<br>
 	<div id="right-panel">
-		
+
 	<div>
-	<b>Start:</b> <input type="text" id="StartP" value="London EC3N 4AB, United Kingdom">
+	<b>Start:</b> <input type="text" id="StartP" class="inputLen" value="London EC3N 4AB, United Kingdom">
 	<br>
 	<br>
-	<b>City:<input type="text" id="CityName" value="London">
+	<b>City:<input type="text" id="CityName" value="London" class="inputLen">
 	<input type="submit" id="Go" value="Go" onclick="GetDestinations(document.getElementById('CityName').value)">
 	<br>
 	<br>
