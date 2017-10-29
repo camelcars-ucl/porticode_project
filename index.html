@@ -119,9 +119,9 @@
 
 	    function renderDirections(result) { 
 	        var directionsRenderer = new google.maps.DirectionsRenderer(); 
-	        if (oldDirectionsRenderer != null){
+	        /*if (oldDirectionsRenderer != null){
 	        	oldDirectionsRenderer.setMap(null);
-	        }
+	        }*/
 	        directionsRenderer.setMap(map); 
 	        directionsRenderer.setDirections(result);
 	        oldDirectionsRenderer =  directionsRenderer;
@@ -137,6 +137,7 @@
 	      }); 
 	    } 
 	    for (var i =0;i<routes.length;i++){
+	    	console.log(routes);
 	    	requestDirections(routes[i]["start_address"],routes[i]["end_address"]);
 	    }
   	}
