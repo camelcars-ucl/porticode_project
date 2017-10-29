@@ -44,6 +44,7 @@
 		float: left;
 		width: 100%;
 		height: 100%;
+		margin-bottom: 5vh;
 	  }
 	  #right-panel {
 		padding-top: 10vh;
@@ -77,11 +78,11 @@
 	<div id="right-panel">
 
 	<div>
-	<b>Start:</b> <input type="text" id="StartP" class="inputLen" value="London EC3N 4AB, United Kingdom">
+	<b>Start: </b> <input type="text" id="StartP" class="inputLen" value="London EC3N 4AB, United Kingdom">
 	<br>
 	<br>
-	<b>City:<input type="text" id="CityName" value="London" class="inputLen">
-	<input type="submit" id="Go" value="Search" class="btn btn-secondary" onclick="GetDestinations(document.getElementById('CityName').value)">
+	<b>City: </b><input type="text" id="CityName" value="London" class="inputLen">
+	<input type="submit" id="Go" value="Search" class="btn btn-secondary" style="margin-left: 10px;" onclick="GetDestinations(document.getElementById('CityName').value)">
 	<br>
 	Via:
 	</b> <br>
@@ -90,7 +91,7 @@
 	</select>
 	<br>
 	<br>
-	<b>End:</b> <input type="text" id="EndP" value="SE1 7PB"><input class="btn btn-danger" type="submit" id="submit" value="Go!">
+	<b>End:</b> <input type="text" id="EndP" value="SE1 7PB"><input class="btn btn-danger" type="submit" id="submit" value="Go!" style="margin-left: 10px;">
 	</div>
 	</div>
 	<script>
